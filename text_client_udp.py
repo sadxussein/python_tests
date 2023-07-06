@@ -10,9 +10,9 @@ while True:
         message = msvcrt.getch().decode('utf-8')
         client_socket.sendto(message.encode(), SERVER_ADDRESS)
         data, server_address = client_socket.recvfrom(1500)
-        print(data)
+        print(data.decode())
         if message == 'q':
-            break 
+            break
 
 # закрываем сокет
 client_socket.close()
